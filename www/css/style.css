@@ -1,1 +1,22 @@
 /* Empty. Add your own CSS if you like */
+.main_view{
+    margin-top: 88px;
+}
+#search-input {
+    text-align: center;
+}
+
+#search-bar .item {
+    background: none;
+    border: none;
+    margin: 0 0;
+    padding: 0 0;
+}
+.main_header{
+    border-bottom: 0;
+    z-index: 10;
+}
+.main_subheader{
+    border-bottom: 0;
+    z-index: -2;
+}

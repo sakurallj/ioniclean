@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
 
-    <script src='js/firebase.js'></script>
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <!-- ionic/angularjs js -->
+        <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
+        <!-- your app's js -->
+        <script src="js/app.js"></script>
+        <script src="js/controllers.js"></script>
+        <script src="js/services.js"></script>
     </head>
     <body ng-app="starter">
-    <div class="bar bar-header bar-stable">
-      <h1 class="title">hello ionic</h1>
-    </div>
-    <div class="list">
-        <label class="item item-input">
-            <input type="text" placeholder="First Name">
-        </label>
-        <label class="item item-input">
-            <input type="text" placeholder="Last Name">
-        </label>
-        <label class="item item-input">
-            <textarea placeholder="Comments"></textarea>
-        </label>
-    </div>
-    <button class="button button-positive">
-        发送
-    </button>
-    <div class="bar bar-footer bar-stable">
-      <button class="button button-clear">Left</button>
-      <div class="title">Title</div>
-      <button class="button button-clear">Right</button>
-    </div>
-
+        <ion-side-menus>
+            <!-- 主内容区域-->
+            <ion-side-menu-content>
+                <!-- 顶部菜单栏   -->
+                <div class="bar bar-header main_header">
+                    <div class="buttons">
+                        <a class="button button-icon icon" menu-toggle="left"><img src="http://placehold.it/30x30" alt="logo" class="img-circle"></a>
+                    </div>
+                    <div style="text-align: center;width: 100%">
+                        <h4>title</h4>
+                    </div>
+                    <div class="buttons" ng-controller="mainPopver">
+                        <a class="button button-icon icon ion-navicon-round" ng-click="showMainPopver($event)"></a>
+                    </div>
+                </div>
+                <div class="bar bar-subheader main_subheader">
+                    <div id="search-bar">
+                        <div class="item item-input-inset">
+                            <label class="item-input-wrapper" id="search-input">
+                                <i class="icon ion-search placeholder-icon"></i>
+                                <input type="text" placeholder="&#x641C;&#x7D22;" ng-model="query" ng-change="search()" style="">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- 内容区域 -->
+                <ion-nav-view class="main_view"></ion-nav-view>
+                <ion-footer-bar align-title="center">
+                    <div ng-include="&apos;templates/main-footer.html&apos;"></div>
+                </ion-footer-bar>
+            </ion-side-menu-content>
+            <!-- 左菜单区域-->
+            <ion-side-menu side="left">
+                <div ng-include="&apos;templates/main-menu-left.html&apos;"></div>
+            </ion-side-menu>
+        </ion-side-menus>
     </body>
 </html>

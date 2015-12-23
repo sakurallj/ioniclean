@@ -1,0 +1,17 @@
+<ion-view view-title="Home">
+    <ion-content class="padding">
+        <ion-list show-delete="data.showDelete" show-reorder="data.showReorder" ng-controller="mainHomeCtrl">
+
+            <ion-item ng-repeat="friend in friends"
+                      item="item"
+                      href="#/item/{{item.id}}" class="item-avatar item-remove-animate" >
+                <img ng-src="{{friend.headPic}}">
+                <h2>{{friend.name}}</h2>
+                <ion-delete-button class="ion-minus-circled"
+                                   ng-click="onItemDelete(item)">
+                </ion-delete-button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
+
