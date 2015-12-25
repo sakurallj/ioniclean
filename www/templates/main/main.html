@@ -1,0 +1,37 @@
+<!-- header -->
+<div class="bar bar-header main_header">
+    <div class="buttons">
+        <a class="button button-icon icon" menu-toggle="left"><img ng-controller="userProfileCtrl" src="{{headerImageUrl}}" alt="headerImg" class="img-circle header_img"></a>
+    </div>
+    <div style="text-align: center;width: 100%">
+        <h4>{{title}}</h4>
+    </div>
+    <div class="buttons" ng-controller="mainPopverCtrl">
+        <a class="button button-icon icon ion-navicon-round" ng-click="showMainPopver($event)"></a>
+    </div>
+</div>
+<div class="bar bar-subheader main_subheader">
+    <div id="search-bar">
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper" id="search-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="&#x641C;&#x7D22;" ng-model="query" ng-change="search()" style="">
+            </label>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+    <ion-tab title="消息" icon="ion-chatbubble-working" href="#/main/home" badge="12">
+        <ion-nav-view name="main-home" class="main_view"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="电话" icon="ion-ios-telephone" href="#/main/about">
+        <ion-nav-view name="main-about" class="main_view"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="联系人" icon="ion-android-contacts"  href="#/main/contact">
+        <ion-nav-view name="main-contact" class="main_view"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="动态" icon="ion-star" href="#/main/dynamic">
+        <ion-nav-view name="main-dynamic" class="main_view"></ion-nav-view>
+    </ion-tab>
+</ion-tabs>

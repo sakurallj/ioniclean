@@ -20,45 +20,24 @@
         <script src="cordova.js"></script>
 
         <!-- your app's js -->
+        <script src="js/firebase.js"></script>
         <script src="js/app.js"></script>
-        <script src="js/controllers.js"></script>
-        <script src="js/services.js"></script>
+        <script src="js/controllers/mainControllers.js"></script>
+        <script src="js/controllers/userControllers.js"></script>
+        <script src="js/controllers/menuControllers.js"></script>
+        <script src="js/services/appServices.js"></script>
+        <script src="js/services/userServices.js"></script>
     </head>
     <body ng-app="starter">
         <ion-side-menus>
             <!-- 主内容区域-->
-            <ion-side-menu-content>
-                <!-- 顶部菜单栏   -->
-                <div class="bar bar-header main_header">
-                    <div class="buttons">
-                        <a class="button button-icon icon" menu-toggle="left"><img src="http://placehold.it/30x30" alt="logo" class="img-circle"></a>
-                    </div>
-                    <div style="text-align: center;width: 100%">
-                        <h4>title</h4>
-                    </div>
-                    <div class="buttons" ng-controller="mainPopver">
-                        <a class="button button-icon icon ion-navicon-round" ng-click="showMainPopver($event)"></a>
-                    </div>
-                </div>
-                <div class="bar bar-subheader main_subheader">
-                    <div id="search-bar">
-                        <div class="item item-input-inset">
-                            <label class="item-input-wrapper" id="search-input">
-                                <i class="icon ion-search placeholder-icon"></i>
-                                <input type="text" placeholder="&#x641C;&#x7D22;" ng-model="query" ng-change="search()" style="">
-                            </label>
-                        </div>
-                    </div>
-                </div>
+            <ion-side-menu-content ng-controller="appCtrl">
                 <!-- 内容区域 -->
-                <ion-nav-view class="main_view"></ion-nav-view>
-                <ion-footer-bar align-title="center">
-                    <div ng-include="&apos;templates/main-footer.html&apos;"></div>
-                </ion-footer-bar>
+                <ion-nav-view></ion-nav-view>
             </ion-side-menu-content>
             <!-- 左菜单区域-->
-            <ion-side-menu side="left">
-                <div ng-include="&apos;templates/main-menu-left.html&apos;"></div>
+            <ion-side-menu side="left" ng-controller="menuLeftCtrl">
+                <div ng-include="&apos;templates/menu/menu-left.html&apos;"></div>
             </ion-side-menu>
         </ion-side-menus>
     </body>
