@@ -76,8 +76,12 @@ angular.module('starter',
             .state('register', {
                 url: '/register',
                 templateUrl: 'templates/user/register.html'
+            })
+            .state('setting', {
+                url: '/setting',
+                templateUrl: 'templates/menu/menu-setting.html'
             });
 
-        $urlRouterProvider.otherwise('/mian/home');
+        $urlRouterProvider.otherwise('/main/home');
 
     });

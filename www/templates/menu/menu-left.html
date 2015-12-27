@@ -1,26 +1,37 @@
 <ion-header-bar class="bar-stable bar-light ">
     <img src="http://placehold.it/30x30" alt="logo" class="img-circle">
 </ion-header-bar>
-<ion-content>
+<ion-content class="menu_left_content">
     <ion-list id="menuLinks">
-        <ion-item menu-close="" href="#/app/dashboard"> 开通会员 </ion-item>
-        <ion-item menu-close="" href="#/app/profiles"> QQ钱包</ion-item>
-        <ion-item menu-close="" href="#">个性装扮</ion-item>
-        <ion-item menu-close="" href="#">我的收藏</ion-item>
-        <ion-item menu-close="" href="#">我的相册</ion-item>
-        <ion-item menu-close="" href="#">我的文件</ion-item>
+        <ion-item menu-close="" href="#/app/dashboard">
+            <i class="icon ion-person"></i>
+            <span>开通会员</span>
+        </ion-item>
+        <ion-item menu-close="" href="#/app/profiles">
+            <i class="icon ion-bag"></i>
+            <span>QQ钱包</span>
+        </ion-item>
+        <ion-item menu-close="" href="#">
+            <i class="icon ion-android-color-palette"></i>
+            <span>个性装扮</span>
+        </ion-item>
+        <ion-item menu-close="" href="#">
+            <i class="icon ion-cube"></i>
+            <span>我的收藏</span>
+        </ion-item>
+        <ion-item menu-close="" href="#">
+            <i class="icon ion-images"></i>
+            <span>我的相册</span>
+        </ion-item>
+        <ion-item menu-close="" href="#">
+            <i class="icon ion-ios-folder"></i>
+            <span>我的文件</span>
+        </ion-item>
     </ion-list>
 </ion-content>
-<ion-footer-bar align-title="left" menu-close="" class="main_menu_left_footer">
-    <!--<ion-tabs class="tabs-icon-top tabs-positive">-->
-        <!--<ion-tab title="设置" icon="ion-ios-gear-outline" href="#/tab/setting">-->
-            <!--<ion-nav-view name="setting-tab"></ion-nav-view>-->
-        <!--</ion-tab>-->
-        <!--<ion-tab title="夜间" icon="ion-ios-moon-outline" href="#/tab/night">-->
-            <!--<ion-nav-view name="night-tab"></ion-nav-view>-->
-        <!--</ion-tab>-->
-        <!--<ion-tab title="天气">-->
-            <!--<ion-nav-view name="weather-tab"></ion-nav-view>-->
-        <!--</ion-tab>-->
-    <!--</ion-tabs>-->
+<ion-footer-bar align-title="left" menu-close="" class="bar-light menu_left_footer">
+    <div class="button-bar">
+        <a href="#/setting" class="button icon ion-ios-gear-outline"><span>设置</span></a>
+        <a href="#" class="button icon ion-ios-moon-outline" ng-click="setNightOrNot()"><span>夜间</span></a>
+    </div>
 </ion-footer-bar>
