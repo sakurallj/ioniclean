@@ -1,7 +1,7 @@
 /**
  * Created by sakurallj on 15-12-25.
  */
-angular.module("menuControllers",[])
+angular.module("menu.controllers",[])
     .controller("menuLeftCtrl",function($scope,$ionicPopup){
         $scope.setNightOrNot = function(){
             $ionicPopup.alert({

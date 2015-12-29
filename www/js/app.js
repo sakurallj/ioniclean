@@ -6,7 +6,12 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('starter',
-    ['ionic', 'main.controllers','user.controllers','appServices','userServices','menuControllers'])
+    [
+        'ionic'
+        ,'main.controllers','user.controllers','chat.controllers','menu.controllers'
+        ,'app.services','user.services','firebase.services'
+        ,'chat.directives'
+    ])
 
     .run(function ($ionicPlatform) {
         $ionicPlatform.ready(function () {
@@ -80,7 +85,12 @@ angular.module('starter',
             .state('setting', {
                 url: '/setting',
                 templateUrl: 'templates/menu/menu-setting.html'
-            });
+            })
+            .state('chat', {
+                url: '/chat/:friendId',
+                templateUrl: 'templates/chat/chat.html'
+            })
+        ;
 
         $urlRouterProvider.otherwise('/main/home');
 

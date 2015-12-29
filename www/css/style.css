@@ -37,3 +37,7 @@
 .menu_left_footer span{
     margin-left: 5px;
 }
+
+.menu_setting .button{
+    min-width:max-content;
+}

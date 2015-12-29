@@ -12,7 +12,8 @@
         <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
         <link href="css/ionic.app.css" rel="stylesheet">
         -->
-
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.md5.js"></script>
         <!-- ionic/angularjs js -->
         <script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -21,12 +22,19 @@
 
         <!-- your app's js -->
         <script src="js/firebase.js"></script>
+
         <script src="js/app.js"></script>
+
         <script src="js/controllers/mainControllers.js"></script>
         <script src="js/controllers/userControllers.js"></script>
         <script src="js/controllers/menuControllers.js"></script>
+        <script src="js/controllers/chatControllers.js"></script>
+
         <script src="js/services/appServices.js"></script>
         <script src="js/services/userServices.js"></script>
+        <script src="js/services/firebaseServices.js"></script>
+
+        <script src="js/directives/chatDirectives.js"></script>
     </head>
     <body ng-app="starter">
         <ion-side-menus>

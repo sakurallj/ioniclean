@@ -1,8 +1,12 @@
 angular.module('main.controllers', [])
-    .controller('appCtrl', function ($scope,$ionicSideMenuDelegate) {
+    .controller('appCtrl', function ($scope,$ionicSideMenuDelegate,$ionicHistory) {
         $scope.title = "消息";
         //设置不可拖拽展开左侧菜单
         $ionicSideMenuDelegate.canDragContent(false);
+        $scope.backView = function(){
+            console.log($ionicHistory);
+            $ionicHistory.backView();
+        };
     })
     .controller('DashCtrl', function ($scope) {
     })

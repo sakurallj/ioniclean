@@ -3,7 +3,7 @@
         <ion-list show-delete="data.showDelete" show-reorder="data.showReorder"  >
             <ion-item ng-repeat="friend in friends"
                       item="item"
-                      href="#/item/{{item.id}}" class="item-avatar item-remove-animate" >
+                      href="#/chat/{{friend.id}}" class="item-avatar item-remove-animate" >
                 <img ng-src="{{friend.headPic}}">
                 <h2>{{friend.name}}</h2>
                 <ion-option-button class="button-assertive" ng-click="deleteFriend(friend.id)">

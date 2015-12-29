@@ -2,10 +2,11 @@
  * Created by LiaoLingjia on 15-12-24.
  * app services
  */
-angular.module("appServices",[])
+angular.module("app.services",[])
     .factory("appConfigService",function(){
         var config = {
             firebaseUrl:'https://cqq.firebaseio.com/',
+            firebaseChatsUrl:'https://cqq.firebaseio.com/chats',
             firebaseUsersUrl:'https://cqq.firebaseio.com/users'
         };
         return {
@@ -14,33 +15,14 @@ angular.module("appServices",[])
             }
         };
     })
-    .factory("firebaseService",function($q,appConfigService){
-
-        var userDB = new Firebase(appConfigService.getValue("firebaseUsersUrl"));
+    .factory("utilService",function(){
         return {
-            login:function(user){
-                var defer = $q.defer();
-                userDB.authWithPassword(user,function(error, authData) {
-                    if(error){
-                        defer.reject(error);
-                    }
-                    else{
-                        defer.resolve(authData);
-                    }
-                });
-                return defer.promise;
-            },
-            createUser:function(user){
-                var defer = $q.defer();
-                userDB.createUser(user, function (error,data) {
-                    if(error){
-                        defer.reject(error);
-                    }
-                    else{
-                        defer.resolve(data);
-                    }
-                });
-                return defer.promise;
+            mergeUID:function(arr){
+                if(arr){
+                    arr.sort();
+                    return jQuery.md5(arr.join('_'));
+                }
             }
         };
-    });
+    })
+;

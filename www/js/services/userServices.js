@@ -1,7 +1,7 @@
 /**
  * Created by sakurallj on 15-12-25.
  */
-angular.module("userServices",[])
+angular.module("user.services",[])
     .factory("userConfigService",function(){
         var config = {
             email:'',
@@ -42,4 +42,25 @@ angular.module("userServices",[])
                 return config;
             }
         };
-    });
+    })
+    .factory("chatService", function (firebaseService,utilService) {
+        return {
+            getChatHistory:function(myUID,friendUID){
+                //获得UID的hash值
+                var chatRoomKey = utilService.mergeUID([myUID,friendUID]);
+                //查找聊天历史
+                return firebaseService.getChatHistory(chatRoomKey);
+            },
+            sendMessage:function(message,myUID,friendUID){
+                //获得UID的hash值
+                var chatRoomKey = utilService.mergeUID([myUID,friendUID]);
+                return firebaseService.sendMessage(message,chatRoomKey,myUID);
+            },
+            receiveMessage:function(myUID,friendUID,callback){
+                //获得UID的hash值
+                var chatRoomKey = utilService.mergeUID([myUID,friendUID]);
+                firebaseService.receiveMessage(chatRoomKey,callback);
+            }
+        };
+    })
+;
