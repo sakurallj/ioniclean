@@ -11,6 +11,7 @@ angular.module('starter',
         ,'main.controllers','user.controllers','chat.controllers','menu.controllers'
         ,'app.services','user.services','firebase.services'
         ,'chat.directives'
+        //,'ionic.contrib.frostedGlass'
     ])
 
     .run(function ($ionicPlatform) {
