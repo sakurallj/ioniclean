@@ -11,7 +11,6 @@
         .factory('$ionicFrostedDelegate', ['$rootScope', function($rootScope) {
             return {
                 update: function() {
-                    console.log("ionicFrosted.update111");
                     $rootScope.$emit('ionicFrosted.update');
                 }
             }
@@ -46,6 +45,7 @@
                 blurContent.appendChild(contentCloned);
 
                 content.parentNode.addEventListener('scroll', function(e) {
+                    console.log(e.detail);
                     // Move the clone up as we scroll
                     contentCloned.style[ionic.CSS.TRANSFORM] = 'translate3d(0,' + (-e.detail.scrollTop + contentOffset) + 'px, 0)';
                 });
@@ -59,11 +59,9 @@
             return {
                 restrict: 'AC',
                 link: function($scope, $element, $attr, frosted) {
-                    console.log("accc");
                     var blurContent = null;
 
                     $rootScope.$on('ionicFrosted.update', function() {
-                        console.log("ionicFrosted.update");
                         ionic.requestAnimationFrame(function() {
                             if(blurContent) {
                                 blurContent.remove();

@@ -5,7 +5,7 @@ angular.module('main.controllers', [])
         $ionicSideMenuDelegate.canDragContent(false);
         $scope.backView = function(){
             console.log($ionicHistory);
-            $ionicHistory.backView();
+            $ionicHistory.forwardView();
         };
     })
     .controller('DashCtrl', function ($scope) {

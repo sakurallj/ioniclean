@@ -1,5 +1,6 @@
 angular.module('chat.controllers', [])
-    .controller("chatCtrl", function ($scope, $stateParams,$ionicScrollDelegate, chatService, userConfigService) {
+    .controller("chatCtrl", function ($scope, $stateParams,$ionicScrollDelegate,
+                                      chatService, userConfigService,$ionicFrostedDelegate) {
         var myUID =  userConfigService.getCurrUserUID()||'d8aaba72-64aa-423d-a383-4ff2b9f319ca';
         var friendUID = $stateParams.friendId;
         $scope.historyChatList = {};
@@ -13,6 +14,8 @@ angular.module('chat.controllers', [])
         chatService.getChatHistory(myUID, friendUID).then(
             function(data){
                 $scope.historyChatList = data;
+                $ionicScrollDelegate.scrollBottom(true);
+                $ionicFrostedDelegate.update();
             },
             function(error){
 
@@ -25,7 +28,6 @@ angular.module('chat.controllers', [])
         $scope.$on("newChatMessage",function($scope,data,d){
             $scope.currentScope.historyChatList[data.time] = data;
             $ionicScrollDelegate.scrollBottom(true);
+            $ionicFrostedDelegate.update();
         });
-
-
     });

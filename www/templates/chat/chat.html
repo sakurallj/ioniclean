@@ -1,4 +1,4 @@
-<ion-pane ng-controller="chatCtrl">
+<ion-pane ng-controller="chatCtrl" frosted-bar>
     <div class="bar bar-header bar-light menu_setting">
         <div class="buttons">
             <a class="button" ng-click="backView()">返回</a>
@@ -7,18 +7,10 @@
             <h4>聊天</h4>
         </div>
     </div>
-    <ion-view title="Contact">
+    <ion-view title="Contact" >
         <ion-content class="has-header" >
-            <div class="list"  >
-                <div class="item item-avatar" ng-repeat="msg in historyChatList">
-                    <!-- my -->
-                    <img src="{{friend.headerImageUrl}}" class="pull-left" ng-if="friend.uid!==msg.uid">
-                    <span class="pull-left" ng-if="friend.uid!==msg.uid">{{msg.message}}</span>
-                    <!-- friend -->
-                    <img src="{{my.headerImageUrl}}" class="pull-right" ng-if="my.uid===msg.uid">
-                    <span class="pull-right" ng-if="my.uid===msg.uid">{{msg.message}}</span>
-                </div>
-            </div>
+
+            <div ng-include="'templates/chat/chat-inner.html'"></div>
         </ion-content>
     </ion-view>
     <ion-footer-bar align-title="left" class="bar-assertive">

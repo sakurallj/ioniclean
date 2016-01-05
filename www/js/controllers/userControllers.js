@@ -23,9 +23,7 @@ angular.module('user.controllers', [])
             else{
                 firebaseService.login(user).then(
                     function(data){
-                        console.log(data);
                         userConfigService.setCurrUserProfile(data);
-                        console.log(userConfigService.getCurrUserProfile());
                         $state.go("main.home");
                     },
                     function(error){
