@@ -2,11 +2,11 @@
  * Created by LiaoLingjia on 15-12-24.
  * app services
  */
-angular.module("firebase.services",[])
-    .factory("firebaseService",function($q,appConfigService){
-        var baseDB = new Firebase(appConfigService.getValue("firebaseUrl"));
-        var userDB = new Firebase(appConfigService.getValue("firebaseUsersUrl"));
-        var chatDB = new Firebase(appConfigService.getValue("firebaseChatsUrl"));
+angular.module("wilddog.services",[])
+    .factory("wilddogService",function($q,appConfigService){
+        var baseDB = new Wilddog(appConfigService.getValue("wilddogUrl"));
+        var userDB = new Wilddog(appConfigService.getValue("wilddogUsersUrl"));
+        var chatDB = new Wilddog(appConfigService.getValue("wilddogChatsUrl"));
         return {
             login:function(user){
                 var defer = $q.defer();
@@ -45,12 +45,12 @@ angular.module("firebase.services",[])
                 return defer.promise;
             },
             sendMessage:function(message,chatRoomKey,uid){
-                var roomDB = new Firebase(appConfigService.getValue("firebaseChatsUrl")+"/"+chatRoomKey);
+                var roomDB = new Wilddog(appConfigService.getValue("wilddogChatsUrl")+"/"+chatRoomKey);
                 var nowTime = new Date().getTime();
                 roomDB.child(nowTime).set({time:nowTime,message:message,uid:uid});
             },
             receiveMessage:function(chatRoomKey,callback){
-                var roomDB = new Firebase(appConfigService.getValue("firebaseChatsUrl")+"/"+chatRoomKey);
+                var roomDB = new Wilddog(appConfigService.getValue("wilddogChatsUrl")+"/"+chatRoomKey);
                 roomDB.on('child_added', callback);
             }
         };

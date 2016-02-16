@@ -9,8 +9,9 @@ angular.module('starter',
     [
         'ionic'
         ,'main.controllers','user.controllers','chat.controllers','menu.controllers'
-        ,'app.services','user.services','firebase.services'
+        ,'app.services','user.services','firebase.services','wilddog.services'
         ,'chat.directives'
+        ,'ionic.contrib.frostedGlass'
     ])
 
     .run(function ($ionicPlatform) {
