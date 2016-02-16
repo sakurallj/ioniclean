@@ -1,128 +1,20 @@
-<html lang="en">
+<html ng-app="starter">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Ionic Frosted Glass</title>
 </head>
 <body>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p><h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-<h3>Create hybrid mobile apps with the web technologies you love.</h3>
-
-<p>Free and open source, Ionic offers a library of mobile-optimized HTML, CSS and JS components for building
-    highly interactive apps.</p>
-
-<p>Built with Sass and optimized for AngularJS.</p>
-
-<p>
-    <a class="button icon icon-right ion-chevron-right" href="#/tab/navstack">Tabs Nav Stack</a>
-</p>
-
+<ion-pane ng-controller="chatCtrl">
+    <ion-content class="padding" start-y="120">
+        <input type="text" ng-model="message">
+        <ol class="messages">
+            <li ng-repeat="message in messages" ng-bind-html="message.message"></li>
+        </ol>
+    </ion-content>
+    <ion-footer-bar class="bar-frosted">
+        <button class="button button-clear button-positive" ng-click="add()">发送</button>
+    </ion-footer-bar>
+</ion-pane>
 </body>
 </html>
